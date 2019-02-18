@@ -1,0 +1,71 @@
+
+body {
+  background-image: url("bg1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#form {
+  height: 500px;
+  width: 600px;
+  border: #0ea8d8;
+  border-radius: 7px;
+  margin: 100px auto;
+  background-color: rgba(128, 128, 128, 0.5);
+}
+
+#logoInfo {
+  font-size: 70px;
+  text-decoration: none;
+  color: rgba(255, 192, 203, 0.7);
+  position: relative;
+  top: 25px;
+}
+
+#username, #password {
+  height: 35px;
+  width: 300px;
+  color: #424242;
+  margin: 25px auto;
+  background-color: rgba(128, 128, 128, 0.5);
+  border: none;
+  border-radius: 6px;
+}
+
+
+#login {
+  height: 35px;
+  width: 200px;
+  border: none;
+  font-size: medium;
+  color: rgba(31, 31, 31, 0.98);
+  background-color: rgba(0, 0, 0, 0.2);
+  margin: 25px auto;
+  border-radius: 6px;
+}
+
+#login:hover {
+  background-color: rgba(128, 128, 128, 0.3);
+}
+
+span {
+  margin: 0px 50px;
+  color: rgba(31, 31, 31, 0.98);
+}
+
+#register, #forget {
+  color: rgba(31, 31, 31, 0.98);
+}
+
+input::placeholder {
+  color: #222222;
+}
+
+.inputInfo {
+  padding: 30px;
+}
+
+#logo {
+  margin: 25px;
+}
+

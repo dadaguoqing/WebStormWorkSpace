@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>购物车</title>
+  <style type="text/css">
+    #body {
+      width: 300px;
+      height: 150px;
+      margin: 200px auto;
+      text-align: center;
+      border: #0ea8d8 dashed medium;
+      font-size: 25px;
+    }
+
+    fieldset {
+      border-radius: 7px;
+    }
+
+    #province {
+      border-radius: 7px;
+    }
+  </style>
+  <script>
+    function getProvince() {
+
+      var province = arguments[0].value;
+      var city = document.getElementById('city');
+      city.innerHTML = '';
+      if ((province === '安徽省')) {
+      //  两种方法 第一种创建删除节点
+      //  第二种是直接innerText
+        var element1 = document.createElement('option');
+        element1.innerText = '马鞍山';
+        var element2 = document.createElement('option');
+        element2.innerText = '芜湖';
+        city.appendChild(element1);
+        city.appendChild(element2);
+
+      }else if (province === '江苏省') {
+      //  方法二
+        city.innerHTML = '<option> 苏州</option>' +
+          '<option>南通</option>';
+
+      }
+    }
+
+  </script>
+</head>
+<body>
+<div id="body">
+  <fieldset>
+    <legend>地区选择</legend>
+    省份<select id="province" onchange="getProvince(this)">
+    <option>-请选择-</option>
+    <option>安徽省</option>
+    <option>江苏省</option>
+
+  </select>
+    <br>
+    城市<select id="city">
+    <option>-请选择-</option>
+  </select></fieldset>
+</div>
+</body>
+</html>

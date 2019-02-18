@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>管理员列表布局</title>
+
+  <!-- 导入外部样式文件 -->
+  <link rel="stylesheet" type="text/css" href="one.css">
+
+  <style type="text/css">
+    table, tr, td , thead, th{
+      border: 1px solid #ccc;
+      border-collapse: collapse;
+
+    }
+
+    th {
+      height: 50px;
+    }
+
+    thead {
+      background-color: #fbedce;
+    }
+
+    tbody {
+      background-color: #f7f9fd;
+    }
+
+    tr:HOVER {
+      background-color: #cddde4;
+    }
+
+    .table {
+      width: 100%;
+      height : 250px;
+
+      text-align: center;
+    }
+
+    .logo {
+      float: left;
+    }
+  </style>
+</head>
+<body>
+<!-- top div -->
+<div class="top">
+  <img class="logo" src="logo.png"/>
+  <p class="logout">[退出]</p>
+</div>
+<!-- END top div -->
+
+
+<!-- nav div -->
+<div class="nav"></div>
+<!-- END nav div -->
+
+<!-- content div -->
+<div class="content">
+  <div class="content-border">
+    <!-- content-head -->
+    <div class="content-head"></div>
+    <!-- content-center -->
+    <div class="content-center">
+      <table class="table">
+        <thead>
+        <tr>
+          <th><input type="checkbox">全选</th>
+          <th>管理员id</th>
+          <th>姓名</th>
+          <th>拥有角色</th>
+          <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td></td>
+          <td>1</td>
+          <td>唐僧</td>
+          <td>管理员,会计,业务员</td>
+          <td>修改 删除</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>1</td>
+          <td>唐僧</td>
+          <td>管理员,会计,业务员</td>
+          <td>修改 删除</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>1</td>
+          <td>唐僧</td>
+          <td>管理员,会计,业务员</td>
+          <td>修改 删除</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        </tbody>
+
+      </table>
+    </div>
+    <!-- content-foot -->
+    <div class="content-foot"></div>
+  </div>
+</div>
+<!-- END content div -->
+
+
+<!-- foot div -->
+<div class="foot">
+  <p class="copyright">&lt;合肥市蜀山区望江西路800号创新产业园F4栋12层&gt;<br/>版权所有@宏晶信息</p>
+</div>
+<!-- end foot div -->
+</body>
+</html>

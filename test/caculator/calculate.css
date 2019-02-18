@@ -1,0 +1,38 @@
+#calculate {
+  border: #0ea8d8 solid;
+  width: 437px;
+  height: 448px;
+  margin: 100px auto;
+  background-image: url("calcu.png");
+}
+
+#show {
+  width: 405px;
+  height: 60px;
+  position: relative;
+  top: 10px;
+  left: 14px;
+  border-radius: 7px;
+  background-color: rgba(0, 0, 0, 0.3);
+  font-size: 45px;
+  font-weight: bolder;
+  text-align: right;
+}
+
+td > input {
+  width: 100px;
+  height: 45px;
+  background-image: url("btn.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  font-size: 30px;
+  font-weight: bold;
+  margin: 10px 2px;
+  border-radius: 7px;
+  border: #555555;
+}
+
+#buttons {
+  margin: 35px auto;
+
+}

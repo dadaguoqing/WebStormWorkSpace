@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>js</title>
+  <script src="myjs.js"></script>
+  <script>
+    function show() {
+    var i;
+    var b = true;
+    isNaN("56");
+    isNaN("a56");
+    isNaN("");//是一个未知的数字
+    isNaN(parseInt(""));//不是数字
+
+    alert('点我干嘛嘛');
+    console.log('输出' + b + i);
+    console.log('输出' + b + i);
+
+  }
+  </script>
+</head>
+<body>
+<h1>定义式</h1>
+<button onclick="alert('点我干嘛');">点啥点</button>
+<br>
+<h3>内部</h3>
+<button ondblclick="show()">点就点</button>
+<br>
+<h2>外部</h2>
+<button ondblclick="show2()">点就点</button>
+</body>
+</html>

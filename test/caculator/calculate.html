@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>计算器</title>
+  <script src="calcu.js">
+  </script>
+  <style>
+
+  </style>
+  <link rel="stylesheet" href="calculate.css">
+
+</head>
+<body>
+<!--先用div和css布局-->
+<div id="calculate">
+
+  <div>
+    <!--显示屏幕-->
+    <input id="show" type="text" readonly>
+  </div>
+  <div id="buttons">
+    <table>
+      <tr>
+        <td><input type="button" value="7" onclick="clickMethod(this)"></td>
+        <td><input type="button" value="8" onclick="clickMethod(this)"></td>
+        <td><input type="button" value="9" onclick="clickMethod(this)"></td>
+        <td><input type="button" value="+" onclick="clickMethod(this)"></td>
+      </tr>
+      <tr>
+        <td><input type="button" value="4" onclick="clickMethod(this)"></td>
+        <td><input type="button" value="5" onclick="clickMethod(this)"></td>
+        <td><input type="button" value="6" onclick="clickMethod(this)"></td>
+        <td><input type="button" value="-" onclick="clickMethod(this)"></td>
+      </tr>
+      <tr>
+        <td><input type="button" value="1" onclick="clickMethod(this)"></td>
+        <td><input type="button" value="2" onclick="clickMethod(this)"></td>
+        <td><input type="button" value="3" onclick="clickMethod(this)"></td>
+        <td><input type="button" value="*" onclick="clickMethod(this)"></td>
+      </tr>
+      <tr>
+        <td><input type="button" value="0" onclick="clickMethod(this)"></td>
+        <td><input type="button" value="." onclick="clickMethod(this)"></td>
+        <td><input type="button" value="(" onclick="clickMethod(this)"></td>
+        <td><input type="button" value=")" onclick="clickMethod(this)"></td>
+      </tr>
+      <tr>
+        <td><input type="button" value="C" onclick="cls()"></td>
+        <td><input type="button" value="<——" onclick="deleteStep()"></td>
+        <td><input type="button" value="/" onclick="clickMethod(this)"></td>
+        <td><input type="button" value="=" onclick="calculate()"></td>
+      </tr>
+    </table>
+  </div>
+
+
+</div>
+
+</body>
+</html>

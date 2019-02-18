@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>当前时间</title>
+  <style type="text/css">
+    #showTime {
+      border: none;
+      margin: 200px 500px;
+    }
+  </style>
+
+</head>
+<body>
+<div>
+  <input type="text" id="showTime">
+</div>
+
+<script>
+  function show() {
+    var date = new Date();
+    var hour = date.getHours();
+    var min = date.getMinutes();
+    var sec = date.getSeconds();
+    // alert(hour + ':' + min + ':' + sec);
+    setEle('showTime').value = hour + ':' + min + ':' + sec;
+  }
+
+  function setEle() {
+    return document.getElementById(arguments[0]);
+  }
+
+  function setTimer() {
+    setInterval(show, 1000);
+  }
+
+  setTimer();
+
+</script>
+</body>
+</html>

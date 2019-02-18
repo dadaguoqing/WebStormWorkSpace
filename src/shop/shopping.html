@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>购物车</title>
+  <link rel="stylesheet" href="shopping.css">
+  <style type="text/css">
+
+  </style>
+  <script>function buy() {
+    var listLen = document.getElementById('list').childNodes.length
+    if (listLen === 0) {
+      return;
+    }
+    alert(listLen + '下单成功');
+  }
+
+  var wholeCount = 0;
+  var wholeCalcu = 0.00;
+
+  function addMe() {
+    var list = document.getElementById('list');
+    var name = document.getElementById('name').value;
+    var price = document.getElementById('price').value;
+    var count = document.getElementById('count').value;
+    var sum = eval(price * count);
+    if (name === '-请选择商品-') {
+      return;
+    }
+    // if (list.contains()) {
+    //   alert('111')
+    // }
+    //  再加上+-删除三个按钮
+    list.innerHTML +=
+      '<tr><td>' + name +
+      '</td>' + '<td>' + price +
+      '</td>' + '<td>' + '<input type="text" value =' + count + '>' +
+      '</td>' + '<td>' + sum +
+      '</td>' + '<td>' +
+      '<button onclick="changeNum(1,this)">+</button>' +
+      '<button onclick="changeNum(-1,this)">-</button>' +
+      '<button onclick="del(this)">del</button>' +
+      '</td>' +
+      '</tr>';
+
+    //  将总量总价累加
+    wholeCount += parseInt(count);
+    wholeCalcu += parseFloat(sum);
+    var whole = document.getElementById('whole');
+    var calculate = document.getElementById('calculate');
+    whole.innerText = wholeCount;
+    calculate.innerText = wholeCalcu;
+  }
+
+  function changeNum() {
+    var num = arguments[1].parentNode.parentNode.children[2].childNodes[0];
+    var sum = arguments[1].parentNode.parentNode.children[3];
+    var price = arguments[1].parentNode.parentNode.children[1];
+
+    var whole = document.getElementById('whole');
+    var calculate = document.getElementById('calculate');
+    if (arguments[0] < 0 && num.value > 1) {
+      num.value = parseInt(num.value) + arguments[0];
+      whole.innerText--;
+      calculate.innerText = parseFloat(calculate.innerText) - parseFloat(price.innerText);
+    } else if (num.value < 1000 && arguments[0] > 0) {
+      num.value = parseInt(num.value) + arguments[0];
+      whole.innerText++;
+      calculate.innerText = parseFloat(calculate.innerText) + parseFloat(price.innerText);
+    }
+    sum.innerText = price.innerText * num.value;
+
+
+  }
+
+  function del() {
+    //<button>开始往上找到一行
+    arguments[0].parentNode.parentNode.parentNode.removeChild(arguments[0].parentNode.parentNode);
+
+    var whole = document.getElementById('whole');
+    var calculate = document.getElementById('calculate');
+    var num = arguments[0].parentNode.parentNode.children[2].childNodes[0];
+    var sum = arguments[0].parentNode.parentNode.children[3];
+    whole.innerText -= num.value;
+    calculate.innerText -= sum.innerText;
+  }
+
+  function clearAll() {
+    var list = document.getElementById('list');
+    list.innerText = '';
+    var whole = document.getElementById('whole');
+    var calculate = document.getElementById('calculate');
+    whole.innerText = 0;
+    calculate.innerText = '0.00';
+  }
+
+  function changeCount() {
+
+    var count = document.getElementById('count');
+    if ((arguments[0] < 0 && count.value > 1) || (count.value < 1000 && arguments[0] > 0)) {
+      count.value = parseInt(count.value) + arguments[0];
+
+    }
+  }
+
+  function getSel() {
+    var sel = document.getElementById('name');
+    var price = document.getElementById('price');
+    price.innerText = '';
+    document.getElementById('count').value = null;
+    if ((sel.value === '苏宁')) {
+      price.value = '100.00';
+    } else if (sel.value === '淘宝') {
+      price.value = '10.00';
+    } else if (sel.value === '阿里') {
+      price.value = 1.00;
+    }
+    if ((sel.value !== '-请选择商品-')) {
+      document.getElementById('count').value = 1;
+    }
+  }
+
+
+  </script>
+</head>
+<body>
+<canvas id="c"></canvas>
+<div class="body">
+  <h1 align="center">暗网交易</h1>
+  <fieldset id="info">
+    <legend align="center"><h2>商品信息</h2></legend>
+    <label>商品名称</label>
+    <select id="name" onchange="getSel()">
+      <option>-请选择商品-</option>
+      <option>苏宁</option>
+      <option>淘宝</option>
+      <option>阿里</option>
+    </select>
+    <br/>
+    <label>商品价格</label>
+    <input id="price" type="text" readonly/>
+    <br>
+    <label>商品数量</label>
+    <input id="count" type="text" readonly>
+    <button onclick="changeCount(1)">+</button>
+    <button onclick="changeCount(-1)">-</button>
+    <br>
+    <button id="commit" onclick="addMe()">添加到购物车</button>
+  </fieldset>
+
+  <fieldset id="shopper">
+    <legend align="center"><h2>购物车</h2></legend>
+    <table align="center">
+      <thead>
+      <tr>
+        <th>
+          商品名称
+        </th>
+        <th>
+          商品价格
+        </th>
+        <th>
+          商品数量
+        </th>
+        <th>
+          金额
+        </th>
+        <th>
+          操作
+        </th>
+      </tr>
+      </thead>
+
+      <tbody id="list">
+
+      </tbody>
+
+      <tfoot id="total">
+      <tr>
+        <td colspan="2" align="center"><label>总计</label></td>
+
+        <!--第三列为数量总计-->
+        <!--第四列为总价-->
+        <!--第五列为清空购物车-->
+        <td id="whole">0</td>
+        <td id="calculate">0.00</td>
+        <td>
+          <button onclick="clearAll()">清空购物车</button>
+          <button onclick="buy()">立刻下单</button>
+        </td>
+      </tr>
+      </tfoot>
+    </table>
+
+  </fieldset>
+
+
+</div>
+<script src="shopping.js"></script>
+</body>
+</html>

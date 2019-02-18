@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" addBOMForNewFiles="with NO BOM">
+    <file url="file://$PROJECT_DIR$/src/province/province.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/shop/shopping.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/shop/shopping.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/shop/shopping.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/test/adminlist/Square.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/test/adminlist/myjs.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/test/adminlist/one.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/test/adminlist/one.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/test/adminlist/test.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/test/adminlist/testjs.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/test/caculator/calcu.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/test/caculator/calculate.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/test/caculator/calculate.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/test/ccstest.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/test/login/login.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/test/login/login.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/test/login/login.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/test/lol.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/test/photoLoop/curTime.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/test/photoLoop/loopChange.html" charset="UTF-8" />
+  </component>
+</project>

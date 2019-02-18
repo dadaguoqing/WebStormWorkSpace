@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>照片循环切换</title>
+  <style type="text/css">
+    #loopPos {
+      text-align: center;
+    }
+
+    #loop {
+      margin: 250px;
+    }
+  </style>
+</head>
+<body>
+<div id="loopPos">
+  <img id="loop" src="0.jpg">
+</div>
+<script>
+  var i = 0;
+
+  function playLoop() {
+    i++;
+    if ((i >= 7)) {
+      i = 0;
+    }
+    document.getElementById('loop').src = i + '.jpg';
+  }
+
+
+  function timer() {
+    setInterval(playLoop, 1000);
+  }
+
+  timer();
+</script>
+</body>
+</html>

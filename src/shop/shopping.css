@@ -1,0 +1,40 @@
+.body {
+  width: 500px;
+  height: 700px;
+  margin: 50px auto;
+  position: relative;
+  bottom: 775px;
+  color: #f7f9fd;
+}
+
+button {
+  background-color: rgba(128, 128, 128, 0.2);
+  color: #f7f9fd;
+  border: none;
+  border-radius: 7px;
+}
+
+table {
+  text-align: center;
+}
+
+select, input {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: #f7f9fd;
+  width: 70px;
+  text-align: center;
+  border: none;
+  border-radius: 7px;
+}
+
+fieldset {
+  border: none;
+}
+
+#commit {
+  position: relative;
+  left: 300px;
+}
+h1{
+  font-size: 50px;
+}

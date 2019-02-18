@@ -1,0 +1,95 @@
+body {
+  margin: 0px;
+  /* 背景颜色 */
+  background-color: #0ea8d8;
+}
+div {
+  border: 1px solid grey;
+}
+
+.top {
+  height: 61px;
+  width: 960px;
+
+  /* 设定外边距,居中 */
+  margin: 0px auto;
+
+}
+
+.nav {
+  height: 91px;
+  width: 100%;
+
+  /* 背景颜色 */
+  background-color: #0488bb;
+}
+
+.content {
+  height: 410px;
+  width: 100%;
+
+  /* 设定内边距 */
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.foot {
+  height: 50px;
+  width: 960px;
+
+  /* 设定外边距,居中 */
+  margin: 0px auto;
+}
+
+.content-border {
+  width: 950px;
+  height: 395px;
+
+  border: 5px solid #8ac1db;
+
+  /* 设定外边距,居中 */
+  margin: 0px auto;
+
+  /* 背景颜色 */
+  background-color: #e8f3f8;
+}
+
+.content-head {
+  width: 910px;
+  height: 40px;
+
+  /* 设定外边距,居中 */
+  margin: 0px auto;
+}
+.content-center {
+  width: 910px;
+  height: 310px;
+
+  /* 设定外边距,居中 */
+  margin: 0px auto;
+}
+.content-foot {
+  width: 910px;
+  height: 40px;
+
+  /* 设定外边距,居中 */
+  margin: 0px auto;
+}
+
+.logout {
+  color: white;
+  /* 设置字体对其方式:靠右对其 */
+  text-align: right;
+  line-height: 1.6em;
+  /* 文本内容修饰:下划线 */
+  text-decoration: underline;
+
+  width: 90%;
+  margin: 15px auto;
+}
+
+.copyright {
+  color: white;
+  text-align: center;
+  margin-top: 5px;
+}
