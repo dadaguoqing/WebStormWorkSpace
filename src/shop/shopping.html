@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>购物车</title>
+  <script rel="script" src="jquery-1.4.3.js"></script>
   <link rel="stylesheet" href="shopping.css">
   <style type="text/css">
 
@@ -12,7 +13,7 @@
     if (listLen === 0) {
       return;
     }
-    alert(listLen + '下单成功');
+    confirm('下单成功');
   }
 
   var wholeCount = 0;
@@ -23,13 +24,12 @@
     var name = document.getElementById('name').value;
     var price = document.getElementById('price').value;
     var count = document.getElementById('count').value;
-    var sum = eval(price * count);
+    var sum = eval(price * count).toFixed(2);
     if (name === '-请选择商品-') {
       return;
     }
-    // if (list.contains()) {
-    //   alert('111')
-    // }
+
+
     //  再加上+-删除三个按钮
     list.innerHTML +=
       '<tr><td>' + name +
@@ -49,7 +49,7 @@
     var whole = document.getElementById('whole');
     var calculate = document.getElementById('calculate');
     whole.innerText = wholeCount;
-    calculate.innerText = wholeCalcu;
+    calculate.innerText = wholeCalcu.toFixed(2);
   }
 
   function changeNum() {
@@ -62,13 +62,13 @@
     if (arguments[0] < 0 && num.value > 1) {
       num.value = parseInt(num.value) + arguments[0];
       whole.innerText--;
-      calculate.innerText = parseFloat(calculate.innerText) - parseFloat(price.innerText);
+      calculate.innerText = (parseFloat(calculate.innerText) - parseFloat(price.innerText)).toFixed(2);
     } else if (num.value < 1000 && arguments[0] > 0) {
       num.value = parseInt(num.value) + arguments[0];
       whole.innerText++;
-      calculate.innerText = parseFloat(calculate.innerText) + parseFloat(price.innerText);
+      calculate.innerText = (parseFloat(calculate.innerText) + parseFloat(price.innerText)).toFixed(2);
     }
-    sum.innerText = price.innerText * num.value;
+    sum.innerText = (price.innerText * num.value).toFixed(2);
 
 
   }
@@ -90,8 +90,8 @@
     list.innerText = '';
     var whole = document.getElementById('whole');
     var calculate = document.getElementById('calculate');
-    whole.innerText = 0;
-    calculate.innerText = '0.00';
+    whole.innerHTML = "0";
+    calculate.innerHTML = '0.00';
   }
 
   function changeCount() {
@@ -124,8 +124,11 @@
   </script>
 </head>
 <body>
-<canvas id="c"></canvas>
+<div id="paint">
+  <canvas id="c"></canvas>
+</div>
 <div class="body">
+
   <h1 align="center">暗网交易</h1>
   <fieldset id="info">
     <legend align="center"><h2>商品信息</h2></legend>
@@ -196,6 +199,7 @@
 
 
 </div>
+
 <script src="shopping.js"></script>
 </body>
 </html>

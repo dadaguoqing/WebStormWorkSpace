@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>jq写购物车</title>
+  <script src="jquery-1.4.3.js"></script>
+  <script>
+    /**
+     * 统计总价
+     * @type {number}
+     */
+    var total = 0.00;
+
+    /**
+     * 创建节点
+     * @param listObj
+     * @param name
+     * @param price
+     * @param num
+     */
+    function createNode(listObj, name, price, num, sum) {
+
+      listObj.html(listObj.html() + '<tr><td>' + name +
+        '</td>' + '<td>' + price +
+        '</td>' + '<td>' + '<input type="text" value =' + num + '>' +
+        '</td>' + '<td>' + sum +
+        '</td>' + '<td>' +
+        '<button onclick="delJQ(this)">del</button>' +
+        '</td>' +
+        '</tr>');
+    }
+
+    /**
+     * 购物车中删除一项的方法
+     * @param obj
+     */
+    function delJQ(obj) {
+      $(obj).parent().parent().remove();
+      total -= parseInt($(obj).parent().prev().text());
+      var moneyObj = $('#money');
+      moneyObj.text(total.toFixed(2));
+    }
+
+    /**
+     * 添加到购物车
+     */
+    function addMejq() {
+      var listObj = $('#list');
+      var name = $('#name').val();
+      var price = $('#price').val();
+      var num = $('#num').val();
+      var sum = (price * num).toFixed(2);
+      if (name === '-请选择-') {
+        return;
+      }
+      var already = $('td:contains("' + name + '")');
+      if (listObj.text() === '') {
+        //  如果添加的商品还没添加过,那么直接创建这条数据
+        createNode(listObj, name, price, num, sum);
+        total += parseInt(sum);
+      } else if (name === already.text()) {
+        var numObjBro = already.next().next();
+        var sumObjBro = already.next().next().next();
+        numObjBro.text(eval(numObjBro.text() + "+" + num));
+        sumObjBro.text(eval(sumObjBro.text() + "+" + sum).toFixed(2));
+        total += parseInt(sum);
+
+      } else {
+        //  如果添加的商品还没添加过,那么直接创建这条数据
+        createNode(listObj, name, price, num, sum);
+        total += parseInt(sum);
+
+      }
+      var moneyObj = $('#money');
+      moneyObj.text(total.toFixed(2));
+
+
+    }
+
+    /**
+     * 修改商品信息中的值
+     * @param i
+     */
+    function changenum(i) {
+      var name = $('#name').val();
+      var numObj = $('#num');
+      var num = numObj.val();
+      if (name === '-请选择-') {
+        return;
+      }
+      if (i > 0 && num < 1000) {
+        numObj.val(parseInt(num) + i);
+      } else if (i < 0 && num > 1) {
+        numObj.val(parseInt(num) + i);
+      }
+    }
+
+    /**
+     *
+     * 获取从下拉选中的值
+     */
+    function getSelect() {
+      var name = $('#name').val();
+      var priceObj = $('#price');
+      var numObj = $('#num');
+      priceObj.val(null);
+      numObj.val(null);
+      if (name === '飞机') {
+        priceObj.val('20.00');
+      } else if (name === '坦克') {
+        priceObj.val('100.00');
+      }
+      if (name !== '-请选择-') {
+        numObj.val(1);
+      }
+
+    }
+
+  </script>
+</head>
+<body>
+<div>
+
+  <fieldset>
+    <legend>商品信息</legend>
+    <label>商品名称</label>
+    <select id="name" onchange="getSelect()">
+      <option selected>-请选择-</option>
+      <option>飞机</option>
+      <option>坦克</option>
+    </select><br>
+    <label>商品单价</label><input id="price" type="text" readonly><br>
+    <label>商品数量</label><input id="num" type="text"><br>
+    <input class="btn" type="button" value="+" onclick="changenum(1)">
+    <input class="btn" type="button" value="-" onclick="changenum(-1)">
+    <input id="add" type="button" value="添加到购物车" onclick="addMejq()">
+  </fieldset>
+
+  <fieldset>
+    <legend>购物车</legend>
+    <table>
+      <thead>
+      <tr>
+        <td>商品名称</td>
+        <td>商品单价</td>
+        <td>商品数量</td>
+        <td>金额</td>
+        <td>操作</td>
+      </tr>
+      </thead>
+      <tbody id="list"></tbody>
+      <tfoot>
+      <tr>
+        <td id="total" colspan="3">总价</td>
+        <td id="money">0.00</td>
+      </tr>
+      </tfoot>
+
+    </table>
+  </fieldset>
+
+</div>
+</body>
+</html>

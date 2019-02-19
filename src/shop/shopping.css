@@ -1,10 +1,11 @@
 .body {
   width: 500px;
   height: 700px;
-  margin: 50px auto;
-  position: relative;
-  bottom: 775px;
+  margin: 0px auto;
+  padding: 0px 0px;
   color: #f7f9fd;
+  position: relative;
+  bottom: 750px;
 }
 
 button {
@@ -35,6 +36,18 @@ fieldset {
   position: relative;
   left: 300px;
 }
-h1{
+
+h1 {
   font-size: 50px;
 }
+
+#paint {
+  float: left;
+}
+
+#c {
+  position: relative;
+  bottom: 35px;
+  right: 10px;
+}
+
